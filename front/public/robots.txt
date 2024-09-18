@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://finpro.jose-gutierrez.com
+
+# Sitemaps
+Sitemap: https://finpro.jose-gutierrez.com/sitemap.xml
