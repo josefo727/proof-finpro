@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 
 interface ButtonProps {
-  children: ReactNode;  // El texto o contenido del botón
-  onClick?: () => void; // Evento onClick opcional
-  type?: "button" | "submit" | "reset"; // Tipo de botón
+  children: ReactNode;
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
 }
 
 const Button = ({ children, onClick, type = "button" }: ButtonProps) => {

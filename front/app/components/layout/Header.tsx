@@ -33,14 +33,12 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Botón de menú en móvil */}
         <div className="md:hidden">
           <button onClick={toggleMenu} className="focus:outline-none">
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
 
-        {/* Menú de navegación */}
         <nav className="hidden md:flex space-x-8">
           <Link href="#home">
             <span className="hover:text-secondary transition">Inicio</span>
@@ -57,7 +55,6 @@ const Header = () => {
         </nav>
       </div>
 
-      {/* Menú desplegable para móviles */}
       {isOpen && (
         <nav className="md:hidden bg-primary py-2">
           <Link href="#home">

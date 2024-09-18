@@ -14,10 +14,8 @@ class ContactForm(BaseModel):
 @router.post("/api/send-email/")
 async def send_email_route(contact: ContactForm):
     try:
-        # Enviar correo a la administración
         send_email_to_admin(contact.fullName, contact.email, contact.message)
 
-        # Enviar correo de agradecimiento al usuario
         send_thank_you_email(contact.email, contact.fullName)
 
         return {"message": "Emails sent successfully"}

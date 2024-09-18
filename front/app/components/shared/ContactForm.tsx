@@ -25,7 +25,7 @@ const ContactForm = () => {
 
       if (response.ok) {
         setSubmitted(true);
-        reset();  // Resetea el formulario después de enviar
+        reset();
       } else {
         console.error("Error al enviar el formulario");
       }
@@ -36,7 +36,6 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      {/* Campo Nombre Completo */}
       <div>
         <label htmlFor="fullName" className="block text-sm font-medium text-gray-300">
           Nombre Completo
@@ -49,7 +48,6 @@ const ContactForm = () => {
         {errors.fullName && <p className="text-error mt-1">{errors.fullName.message}</p>}
       </div>
 
-      {/* Campo Email */}
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-gray-300">
           Correo Electrónico
@@ -69,7 +67,6 @@ const ContactForm = () => {
         {errors.email && <p className="text-error mt-1">{errors.email.message}</p>}
       </div>
 
-      {/* Campo Mensaje */}
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-gray-300">
           Mensaje
@@ -83,7 +80,6 @@ const ContactForm = () => {
         {errors.message && <p className="text-error mt-1">{errors.message.message}</p>}
       </div>
 
-      {/* Botón de Enviar */}
       <div>
         <button
           type="submit"
@@ -93,7 +89,6 @@ const ContactForm = () => {
         </button>
       </div>
 
-      {/* Mensaje de éxito */}
       {submitted && <p className="text-green-600 mt-4">¡Gracias por contactarnos!</p>}
     </form>
   );

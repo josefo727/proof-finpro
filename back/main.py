@@ -4,20 +4,18 @@ from app.api import router
 
 app = FastAPI()
 
-# Configurar CORS
 origins = [
-    "http://localhost:3000",  # El origen del frontend
+    "http://localhost:3000",
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # Permitir estos orígenes
+    allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],  # Permitir todos los métodos (GET, POST, etc.)
-    allow_headers=["*"],  # Permitir todos los headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-# Incluir las rutas desde api.py
 app.include_router(router)
 
 

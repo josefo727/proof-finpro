@@ -10,7 +10,6 @@ from smtplib import (
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-# Cargar las variables de entorno desde el archivo .env
 load_dotenv()
 
 SMTP_SERVER = os.getenv("SMTP_SERVER")
@@ -32,7 +31,6 @@ def send_email_to_admin(full_name: str, email: str, message: str):
         body = f"Has recibido un nuevo mensaje de contacto.\n\nNombre: {full_name}\nCorreo: {email}\nMensaje: {message}"
         msg.attach(MIMEText(body, "plain"))
 
-        # Configuración del servidor SMTP
         server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
         server.sendmail(msg["From"], msg["To"], msg.as_string())
         server.quit()
@@ -55,11 +53,9 @@ def send_thank_you_email(to_email: str, full_name: str):
         msg["To"] = to_email
         msg["Subject"] = "¡Gracias por contactarnos!"
 
-        # Cuerpo del correo de agradecimiento
         body = f"Hola {full_name},\n\nGracias por contactarnos. Pronto nos pondremos en contacto contigo.\n\nSaludos,\nFinPro"
         msg.attach(MIMEText(body, "plain"))
 
-        # Configuración del servidor SMTP
         server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
         server.sendmail(msg["From"], msg["To"], msg.as_string())
         server.quit()
