@@ -20,8 +20,8 @@ This is a full-stack project consisting of a frontend built with Next.js (TypeSc
 │   ├── next.config.mjs  # Next.js configuration
 │   ├── public           # Static assets
 │   │   ├── images       # Image assets
-├── docker-compose.yml    # Docker Compose file to run the entire app
-└── README.md             # Project documentation
+├── docker-compose.yml   # Docker Compose file to run the entire app
+└── README.md            # Project documentation
 ```
 
 > [!IMPORTANT] First, in the `back` directory, copy the `.env.example` file to `.env`.
@@ -112,7 +112,7 @@ Ensure the following environment variables are set in the `.env` file for both f
 
 ```bash
 # Backend (FastAPI)
-SMTP_SERVER=mailpit   # Or "localhost" if running Mailpit separately
+SMTP_SERVER=mail  # Or "localhost" if running Mailpit separately
 SMTP_PORT=1025
 ADMIN_EMAIL=admin@finpro.com
 NO_REPLY_EMAIL=no-reply@finpro.com
